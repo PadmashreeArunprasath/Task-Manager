@@ -1,0 +1,156 @@
+body {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url("assets/light.webp");
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+    padding: 30px;
+    background: white;
+    opacity: 0.8;
+    background-blend-mode: 0.5;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 8px;
+    margin-top: 70px;
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 80%;
+        padding: 15px;
+        margin-top: 60px;
+    }
+    body{
+        background-image: url("assets/light.webp"); 
+        background-size: auto;
+    }
+    .task-input {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .task-input input, 
+    .task-input select, 
+    .task-input button {
+        width: 90%;
+    }
+    
+    ul {
+        padding: 0;
+    }
+}
+
+/* Styling Task Input */
+.task-input {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.task-input input, 
+.task-input select, 
+.task-input button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.task-input button {
+    background: rgb(75, 7, 117);
+    opacity:0.8;
+    color: white;
+
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Styling Task List */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.task {
+    background: #ddd;
+    padding: 10px;
+   
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: grab;
+    border-radius: 5px;
+}
+
+/* Priority Colors */
+.task.high { border-left: 4px solid red; }
+.task.medium { border-left: 4px solid orange; }
+.task.low { border-left: 4px solid green; }
+
+.task.completed {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-image: url("assets/dark.jpg");
+    background-size: auto;
+    color: white;
+}
+
+.dark-mode .container {
+    background: #333;
+}
+
+.dark-mode .task {
+    background: #ddd;
+    
+    color: black;
+    padding: 10px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: grab;
+    border-radius: 5px;
+}
+
+.dark-mode .task-input button {
+    background: rgb(12, 12, 12);
+    color: white;
+    border: none;
+    
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Dark Mode Button */
+#dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+}
+ #dark-mode-toggle svg:last-child {
+    display: none;
+}
+
+.dark-mode #dark-mode-toggle  svg:first-child {
+    display: none;
+}
+
+.dark-mode #dark-mode-toggle  svg:last-child {
+    display: block;
+}
